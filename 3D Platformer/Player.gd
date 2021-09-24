@@ -1,6 +1,6 @@
 extends KinematicBody
 
-const MOUS_SENSIVITY = 0.3
+const MOUS_SENSIVITY = 0.28
 onready var camera = $CamRoot/Camera
 
 #Variablen für die Bewegung
@@ -59,7 +59,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		jump_counter = 0
 		
-	if Input.is_action_just_pressed("jump") and jump_counter < 2:
+	if Input.is_action_just_pressed("jump") and jump_counter < 1 and is_on_floor():
 		jump_counter += 1
 		velocity.y = JUMP_SPEED
 		
