@@ -16,8 +16,8 @@ transform = Transform( 2, 0, 0, 0, 3, 0, 0, 0, 1, -4.47563, 1.0682, -12.7569 )
 [node name="Obstacle" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10021, 1.294, -1.44225 )
 
-[node name="Enemy" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.508212, 0, -0.124538, 0, 0.603467, 0, 0.154391, 0, 0.621761, 2, 1.58538, -3 )
-
 [node name="KinematicBody" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56039, 1.09244, -9.92344 )
+
+[node name="KinematicBody2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.35113, 0, 0, 0, 0.35113, 0, 0, 0, 0.35113, 0.406036, 1.20462, 4.60093 )
