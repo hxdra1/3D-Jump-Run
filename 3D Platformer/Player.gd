@@ -8,8 +8,8 @@ var velocity = Vector3.ZERO
 var current_vel = Vector3.ZERO
 var direction = Vector3.ZERO
 
-const SPEED = 10
-const SPRINT_SPEED = 20
+const SPEED = 6
+const SPRINT_SPEED = 12
 const ACCEL = 15.0
 
 #Springen
