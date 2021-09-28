@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Texturen/texture_rot.png" type="Texture" id=1]
+[ext_resource path="res://Texturen/texture_orange.png" type="Texture" id=2]
+[ext_resource path="res://Texturen/texture_grau.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 3 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 3 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 2 )
+uv1_triplanar = true
+
+[node name="level 1" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.7911, 0 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 4.07862, 0, 0, 0, 4.07862, 0, 0, 0, 4.07862, -0.226411, -3.05399, -2.67398 )
+width = 6.0
+depth = 5.0
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 4.07862, 0, 0, 0, 4.07862, 0, 0, 0, 4.07862, 7.86243, 5.03777, -2.67398 )
+width = 2.47995
+depth = 4.96514
+material = SubResource( 2 )
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 4.07862, 0, 0, 0, 4.07862, 0, 0, 0, 4.07862, -7.71534, 5.03799, -2.67398 )
+width = 2.07859
+depth = 4.96514
+material = SubResource( 2 )
+
+[node name="CSGBox4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 4.07862, 0, 0, 0, 4.07862, 0, 0, 0, 4.07862, 0.0631712, 5.03799, -11.3696 )
+width = 2.07859
+depth = 1.9299
+material = SubResource( 2 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="CSGCombiner"]
+transform = Transform( 1.82864e-07, -1.4144e-09, -6.10591, -0.0484836, -2.79201, 0, -4.18344, 0.0323577, -2.66898e-07, -3.44312, 1.08998, 7.60445 )
+operation = 2
+polygon = PoolVector2Array( 0, 0, 0, 1, 1, 1, 2.71756, -0.0344589 )
+material = SubResource( 3 )
+
+[node name="CSGBox5" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 4.07862, 0, 0, 0, 4.07862, 0, 0, 0, 4.07862, -0.226411, -3.05399, 13.1067 )
+width = 1.01245
+height = 0.363404
+depth = 1.18511
+material = SubResource( 4 )
+
+[node name="KinematicBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.97238, -4.73427 )

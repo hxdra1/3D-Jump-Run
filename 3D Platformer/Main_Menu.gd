@@ -5,7 +5,7 @@ onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer4/HBoxC
 
 var current_selection = 0
 
-const erstes_level = preload("res://World.tscn")
+const erstes_level = preload("res://level 1.tscn")
 
 func _ready():
 	set_current_selection(0)
