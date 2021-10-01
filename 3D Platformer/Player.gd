@@ -8,16 +8,23 @@ var velocity = Vector3.ZERO
 var current_vel = Vector3.ZERO
 var direction = Vector3.ZERO
 
-const SPEED = 6
+const default_movement_speed = 6
 const SPRINT_SPEED = 12
 const ACCEL = 15.0
 
 #Springen
 const GRAVITY = -40
-const JUMP_SPEED = 15
+const JUMP_SPEED = 10.5
 var jump_counter = 0
 const AIR_ACCEL = 9.0
+
+#Ducken/Crouchen
+var default_height = 1
+var crouch_height =  0.3
+var crouch_move_speed = 3
+var crouch_speed = 20
  
+onready var pcap = $CollisionShape 
 
 
 func _process(delta):
@@ -65,10 +72,19 @@ func _physics_process(delta):
 		
 		 
 	
-	var speed = SPRINT_SPEED if Input.is_action_pressed("sprint") else SPEED
+	var speed = SPRINT_SPEED if Input.is_action_pressed("sprint") else default_movement_speed
 	var target_vel = direction * speed
 	
 	var accel = ACCEL if is_on_floor() else AIR_ACCEL
+	
+	
+	if Input.is_action_pressed("crouch"):
+		pcap.shape.height -= crouch_speed * delta
+		
+	else:
+		pcap.shape.height += crouch_speed * delta
+		
+	pcap.shape.height = clamp(pcap.shape.height, crouch_height, default_height)
 	
 	current_vel = current_vel.linear_interpolate(target_vel, accel * delta)
 	velocity.x = current_vel.x
