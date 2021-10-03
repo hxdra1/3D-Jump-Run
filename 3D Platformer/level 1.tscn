@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Grau.tres" type="Material" id=1]
 [ext_resource path="res://Rot.tres" type="Material" id=2]
+[ext_resource path="res://Orange.tres" type="Material" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gruen.tres" type="Material" id=5]
 
 [node name="level 1" type="Spatial"]
 
@@ -23,16 +25,44 @@ height = 10.0
 depth = 20.0
 material = ExtResource( 1 )
 
-[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 2 )
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2 )
 operation = 2
 width = 6.0
 height = 6.0
 depth = 16.0
 material = ExtResource( 1 )
 
-[node name="CSGPolygon" type="CSGPolygon" parent="CSGCombiner"]
-transform = Transform( -3.93402e-07, 1.14641e-14, -6, -2.62268e-07, -1, 0, -3, 8.74228e-08, 7.86805e-07, -3, 0, 10 )
+[node name="CSGPolygon" type="CSGPolygon" parent="CSGCombiner/CSGBox"]
+transform = Transform( -3.93402e-07, 1.14641e-14, -6, -2.62268e-07, -1, 0, -3, 8.74228e-08, 7.86805e-07, -3, -1, 10 )
 operation = 2
 polygon = PoolVector2Array( 0, 0, 0, 2, 1, 2, 4, 0 )
+material = ExtResource( 2 )
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 18 )
+width = 6.0
+depth = 10.0
+material = ExtResource( 3 )
+
+[node name="CSGBox4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0232521, 18 )
+width = 6.82021
+height = 0.958337
+depth = 2.03147
+material = ExtResource( 5 )
+
+[node name="CSGBox5" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 33 )
+width = 8.0
+height = 10.0
+depth = 12.0
+material = ExtResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner/CSGBox5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1 )
+operation = 2
+width = 4.0
+height = 6.0
+depth = 10.0
 material = ExtResource( 2 )

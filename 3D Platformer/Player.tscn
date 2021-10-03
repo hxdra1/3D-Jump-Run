@@ -64,7 +64,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="HeadBonker" type="RayCast" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772846, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.690437, 0 )
 enabled = true
 cast_to = Vector3( 0, 1, 0 )
 
