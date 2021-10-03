@@ -52,8 +52,20 @@ height = 0.958337
 depth = 2.03147
 material = ExtResource( 5 )
 
+[node name="CSGBox6" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -3, 32 )
+width = 4.0
+depth = 10.0
+material = ExtResource( 3 )
+
+[node name="CSGBox7" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3, 32 )
+width = 4.0
+depth = 10.0
+material = ExtResource( 3 )
+
 [node name="CSGBox5" type="CSGBox" parent="CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 33 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 49 )
 width = 8.0
 height = 10.0
 depth = 12.0
