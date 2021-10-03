@@ -26,6 +26,8 @@ var crouch_speed = 20
  
 onready var pcap = $CollisionShape 
 
+onready var bonker = $HeadBonker
+
 
 func _process(delta):
 	window_activity()
@@ -34,7 +36,7 @@ func _process(delta):
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-
+	
 
 #Alles was mit der Kamera zu tun hat
 func _input(event):
@@ -49,6 +51,11 @@ func _input(event):
 
 func _physics_process(delta):
 	direction = Vector3.ZERO
+	
+	var head_bonked = false
+	
+	if bonker.is_colliding():
+		head_bonked = true
 	
 	if Input.is_action_pressed("forward"):
 		direction -= camera.global_transform.basis.z

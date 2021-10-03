@@ -63,4 +63,9 @@ __meta__ = {
 wait_time = 0.1
 autostart = true
 
+[node name="HeadBonker" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772846, 0 )
+enabled = true
+cast_to = Vector3( 0, 1, 0 )
+
 [connection signal="timeout" from="CamRoot/Camera/RichTextLabel/counter" to="CamRoot/Camera/RichTextLabel" method="_on_counter_timeout"]
