@@ -1,18 +1,18 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Grau.tres" type="Material" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Rot.tres" type="Material" id=2]
 [ext_resource path="res://Orange.tres" type="Material" id=3]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Grau.tres" type="Material" id=4]
 [ext_resource path="res://Gruen.tres" type="Material" id=5]
 
-[node name="level 1" type="Spatial"]
+[node name="level_1" type="Spatial"]
 
-[node name="KinematicBody" parent="." instance=ExtResource( 4 )]
+[node name="KinematicBody" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.94563, -5.12725 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.7911, 0 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 28.7911, -15 )
 
 [node name="CSGCombiner" type="CSGCombiner" parent="."]
 calculate_tangents = false
@@ -23,7 +23,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 width = 14.0
 height = 10.0
 depth = 20.0
-material = ExtResource( 1 )
+material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="CSGCombiner/CSGBox"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2 )
@@ -31,7 +31,7 @@ operation = 2
 width = 6.0
 height = 6.0
 depth = 16.0
-material = ExtResource( 1 )
+material = ExtResource( 4 )
 
 [node name="CSGPolygon" type="CSGPolygon" parent="CSGCombiner/CSGBox"]
 transform = Transform( -3.93402e-07, 1.14641e-14, -6, -2.62268e-07, -1, 0, -3, 8.74228e-08, 7.86805e-07, -3, -1, 10 )
@@ -65,16 +65,23 @@ depth = 10.0
 material = ExtResource( 3 )
 
 [node name="CSGBox5" type="CSGBox" parent="CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 49 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 49 )
 width = 8.0
-height = 10.0
+height = 16.0
 depth = 12.0
-material = ExtResource( 1 )
+material = ExtResource( 4 )
 
-[node name="CSGBox" type="CSGBox" parent="CSGCombiner/CSGBox5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1 )
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner/CSGBox5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -2 )
 operation = 2
 width = 4.0
 height = 6.0
 depth = 10.0
+material = ExtResource( 2 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner/CSGBox5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+operation = 2
+radius = 2.0
+height = 6.0
 material = ExtResource( 2 )
