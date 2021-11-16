@@ -50,6 +50,7 @@ func _input(event):
 		
 
 func _physics_process(delta):
+	respwawn()
 	direction = Vector3.ZERO
 	
 	var head_bonked = false
@@ -101,7 +102,9 @@ func _physics_process(delta):
 		
 	
 	
-	
+func respwawn():
+	if Input.is_action_just_pressed("respawn"):
+		get_tree().reload_current_scene()
 	
 
 #Um die Maus zu zeigen oder zu verstecken
