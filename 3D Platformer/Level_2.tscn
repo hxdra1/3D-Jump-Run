@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Rot.tres" type="Material" id=2]
 [ext_resource path="res://Grau.tres" type="Material" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 
 [node name="Level_2" type="Spatial"]
 
@@ -37,3 +38,6 @@ width = 20.0
 height = 8.0
 depth = 34.0
 material = ExtResource( 3 )
+
+[node name="KinematicBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.0817969, 0, -0.34147, 0, 0.35113, 0, 0.34147, 0, 0.0817969, -0.126157, 1.18081, 4.45878 )

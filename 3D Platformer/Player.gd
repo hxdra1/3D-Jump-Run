@@ -31,6 +31,7 @@ onready var bonker = $HeadBonker
 
 func _process(delta):
 	window_activity()
+	respwawn()
 
 
 func _ready():
@@ -50,7 +51,6 @@ func _input(event):
 		
 
 func _physics_process(delta):
-	respwawn()
 	direction = Vector3.ZERO
 	
 	var head_bonked = false
@@ -101,9 +101,9 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3.UP,true, 4, deg2rad(45))
 		
 	
-	
+		
 func respwawn():
-	if Input.is_action_just_pressed("respawn"):
+	if (Input.is_action_just_pressed("respawn")):
 		get_tree().reload_current_scene()
 	
 

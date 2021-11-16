@@ -25,8 +25,7 @@ func _process(delta):
 
 func handle_selection(current_selection):
 	if current_selection == 0:
-		get_parent().add_child(erstes_level.instance())
-		queue_free()
+		get_tree().change_scene("res://level_1.tscn")
 		
 	if current_selection == 1:
 		get_tree().quit()
