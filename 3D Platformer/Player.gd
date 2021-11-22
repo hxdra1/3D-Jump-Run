@@ -14,7 +14,7 @@ const ACCEL = 15.0
 
 #Springen
 const GRAVITY = -40
-const JUMP_SPEED = 10.5
+const JUMP_SPEED = 12
 var jump_counter = 0
 const AIR_ACCEL = 9.0
 
