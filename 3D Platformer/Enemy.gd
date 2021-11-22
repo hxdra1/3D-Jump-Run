@@ -39,3 +39,8 @@ func set_color_red():
 
 func set_color_green():
 	$MeshInstance.get_surface_material(0).set_albedo(Color(0, 1, 0))
+
+
+func _on_Player_Detection_body_entered(body):
+	if body.is_in_group("Player"):
+		get_tree().reload_current_scene()
