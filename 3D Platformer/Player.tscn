@@ -17,7 +17,7 @@ height = 0.8
 size = 30
 font_data = ExtResource( 4 )
 
-[node name="KinematicBody" type="KinematicBody" groups=[
+[node name="Player" type="KinematicBody" groups=[
 "Player",
 ]]
 script = ExtResource( 1 )
